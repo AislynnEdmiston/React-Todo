@@ -36,7 +36,18 @@ class App extends React.Component {
     })
   }
 
-  
+  addItem = (event, item) => {
+    event.preventDefault();
+
+    let id = Date.now();
+
+    this.setState({
+      toDoList:[ 
+      ...this.state.toDoList, {
+        item: item, id, complete: false
+      }]
+    })
+  }
 
 
   render() {
